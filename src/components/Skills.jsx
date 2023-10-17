@@ -24,10 +24,10 @@ export const Skills = () => {
                         Habilidades Blandas
                     </h3> */}
                     <div className='grid grid-cols-2 gap-4 mt-10' >
-                        <div className='flex justify-center items-center border-2 text-gray-700 rounded-md p-4 w-full font-bold bg-[#eae0d5] hover:bg-[#c6ac8f] ' >Trabajo en equipo</div>
-                        <div className='flex justify-center items-center border-2 text-gray-700 rounded-md p-4 w-full font-bold bg-[#eae0d5] hover:bg-[#c6ac8f] ' >Compromiso</div>
-                        <div className='flex justify-center items-center border-2 text-gray-700 rounded-md p-4 w-full font-bold bg-[#eae0d5] hover:bg-[#c6ac8f] ' >Aprendizaje constante</div>
-                        <div className='flex justify-center items-center border-2 text-gray-700 rounded-md p-4 w-full font-bold bg-[#eae0d5] hover:bg-[#c6ac8f] ' >Creatividad</div>
+                        <div className='flex justify-center items-center border-2 text-gray-700 rounded-md p-4 w-full font-bold bg-transparent backdrop-blur-3xl' >Trabajo en equipo</div>
+                        <div className='flex justify-center items-center border-2 text-gray-700 rounded-md p-4 w-full font-bold bg-transparent backdrop-blur-3xl' >Compromiso</div>
+                        <div className='flex justify-center items-center border-2 text-gray-700 rounded-md p-4 w-full font-bold bg-transparent backdrop-blur-3xl' >Aprendizaje constante</div>
+                        <div className='flex justify-center items-center border-2 text-gray-700 rounded-md p-4 w-full font-bold bg-transparent backdrop-blur-3xl' >Creatividad</div>
                     </div>
                 </div>
                 <div>

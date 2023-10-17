@@ -39,7 +39,7 @@ export const Header = () => {
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
 
     return (
-        <header className="bg-transparent backdrop-blur-lg border-b z-40 o sticky top-0 ">
+        <header className="bg-white bg-opacity-80 backdrop-blur-lg border-b z-40 o sticky top-0 ">
             <nav className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4 lg:px-8" aria-label="Global">
                 <div className="flex lg:flex-1">
                     <a href="#" className="-m-1.5 p-1.5">
@@ -58,7 +58,6 @@ export const Header = () => {
                     </button>
                 </div>
                 <Popover.Group className="hidden lg:flex lg:gap-x-12">
-
                     <a href="#" className="text-sm font-semibold leading-6 text-gray-600 hover:text-gray-500 ">
                         Inicio
                     </a>
