@@ -1,5 +1,7 @@
 import React from 'react'
 import { Fragment, useState } from 'react'
+import { Link } from 'react-scroll'
+import Logo from '../assets/svg/logocc.svg'
 import { Dialog, Disclosure, Popover, Transition } from '@headlessui/react'
 import {
     ArrowPathIcon,
@@ -42,10 +44,10 @@ export const Header = () => {
         <header className="bg-white bg-opacity-80 backdrop-blur-lg border-b z-40 o sticky top-0 ">
             <nav className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4 lg:px-8" aria-label="Global">
                 <div className="flex lg:flex-1">
-                    <a href="#" className="-m-1.5 p-1.5">
+                    {/* <a href="#" className="-m-1.5 p-1.5">
                         <span className='font-bold text-lg text-gray-800' >CarlosCruz</span>
-
-                    </a>
+                    </a> */}
+                    <img className='h-10' src={Logo} alt="" />
                 </div>
                 <div className="flex lg:hidden">
                     <button
@@ -58,34 +60,55 @@ export const Header = () => {
                     </button>
                 </div>
                 <Popover.Group className="hidden lg:flex lg:gap-x-12">
-                    <a href="#" className="text-sm font-semibold leading-6 text-gray-600 hover:text-gray-500 ">
+                    <Link activeClass="active"
+                        to="hero"
+                        spy={true}
+                        smooth={true}
+                        offset={-100}
+                        duration={500} className="cursor-pointer text-sm font-semibold leading-6 text-gray-600 hover:text-gray-500 ">
                         Inicio
-                    </a>
-                    <a href="#" className="text-sm font-semibold leading-6 text-gray-600 hover:text-gray-500 ">
+                    </Link>
+
+                    <Link activeClass="active"
+                        to="about"
+                        spy={true}
+                        smooth={true}
+                        offset={-180}
+                        duration={500} className="cursor-pointer text-sm font-semibold leading-6 text-gray-600 hover:text-gray-500 ">
                         Acerca
-                    </a>
-                    <a href="#" className="text-sm font-semibold leading-6 text-gray-600 hover:text-gray-500 ">
+                    </Link>
+
+                    <Link to="skill"
+                        spy={true}
+                        smooth={true}
+                        offset={-80} className="cursor-pointer text-sm font-semibold leading-6 text-gray-600 hover:text-gray-500 ">
                         Habilidades
-                    </a>
-                    <a href="#" className="text-sm font-semibold leading-6 text-gray-600 hover:text-gray-500 ">
+                    </Link>
+                    <Link to="project"
+                        spy={true}
+                        smooth={true}
+                        offset={-50} className="cursor-pointer text-sm font-semibold leading-6 text-gray-600 hover:text-gray-500 ">
                         Proyecto
-                    </a>
-                    <a href="#" className="text-sm font-semibold leading-6 text-gray-600 hover:text-gray-500 ">
+                    </Link>
+                    <Link to="contacts"
+                        spy={true}
+                        smooth={true}
+                        offset={-20} className="cursor-pointer text-sm font-semibold leading-6 text-gray-600 hover:text-gray-500 ">
                         Contacto
-                    </a>
+                    </Link>
                 </Popover.Group>
                 <div className="hidden lg:flex lg:flex-1 lg:justify-end">
                     <div className='flex items-center justify-center space-x-4 text-yellow-950'>
                         <span href="#" className="text-sm font-bold leading-6 text-gray-900">
                             Mis Redes:
                         </span>
-                        <a href="">
+                        <a target='__blank' href="https://www.instagram.com/kikem4n/">
                             <FaInstagram />
                         </a>
-                        <a href="">
+                        {/* <a target='__blank' href="https://github.com/KikeMan-bit">
                             <FaGithub />
-                        </a>
-                        <a href="">
+                        </a> */}
+                        <a target='__blank' href="https://www.facebook.com/kik3man/">
                             <FaFacebookF />
                         </a>
 
@@ -115,59 +138,42 @@ export const Header = () => {
                     </div>
                     <div className="mt-6 flow-root">
                         <div className="-my-6 divide-y divide-gray-500/10">
-                            <div className="space-y-2 py-6">
-                                <Disclosure as="div" className="-mx-3">
-                                    {({ open }) => (
-                                        <>
-                                            <Disclosure.Button className="flex w-full items-center justify-between rounded-lg py-2 pl-3 pr-3.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">
-                                                Product
-                                                <ChevronDownIcon
-                                                    className={classNames(open ? 'rotate-180' : '', 'h-5 w-5 flex-none')}
-                                                    aria-hidden="true"
-                                                />
-                                            </Disclosure.Button>
-                                            <Disclosure.Panel className="mt-2 space-y-2">
-                                                {[...products, ...callsToAction].map((item) => (
-                                                    <Disclosure.Button
-                                                        key={item.name}
-                                                        as="a"
-                                                        href={item.href}
-                                                        className="block rounded-lg py-2 pl-6 pr-3 text-sm font-semibold leading-7 text-gray-900 hover:bg-gray-50"
-                                                    >
-                                                        {item.name}
-                                                    </Disclosure.Button>
-                                                ))}
-                                            </Disclosure.Panel>
-                                        </>
-                                    )}
-                                </Disclosure>
-                                <a
-                                    href="#"
-                                    className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
-                                >
-                                    Features
-                                </a>
-                                <a
-                                    href="#"
-                                    className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
-                                >
-                                    Marketplace
-                                </a>
-                                <a
-                                    href="#"
-                                    className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
-                                >
-                                    Company
-                                </a>
+                            <div className=" space-y-2 py-6">
+
+                                <Link onClick={() => setMobileMenuOpen(false)} to="hero"
+                                    spy={true}
+                                    smooth={true}
+                                    offset={-20}  className="flex justify-center items-center  w-full -mx-3 rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50 ">
+                                    Inicio
+                                </Link>
+                                <Link onClick={() => setMobileMenuOpen(false)} to="about"
+                                    spy={true}
+                                    smooth={true}
+                                    offset={-20}  className="flex justify-center items-center  w-full -mx-3 rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50 ">
+                                    Acerca
+                                </Link>
+                                <Link onClick={() => setMobileMenuOpen(false)} to="skill"
+                                    spy={true}
+                                    smooth={true}
+                                    offset={-20}  className="flex justify-center items-center  w-full -mx-3 rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50 ">
+                                    Habilidades
+                                </Link>
+
+                                <Link onClick={() => setMobileMenuOpen(false)} to="project"
+                                    spy={true}
+                                    smooth={true}
+                                    offset={-20}  className="flex justify-center items-center  w-full -mx-3 rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50 ">
+                                    Proyecto
+                                </Link>
+                            
+                                <Link onClick={() => setMobileMenuOpen(false)} to="contacts"
+                                    spy={true}
+                                    smooth={true}
+                                    offset={-20}  className="flex justify-center items-center  w-full -mx-3 rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50 ">
+                                    Contacto
+                                </Link>
                             </div>
-                            <div className="py-6">
-                                <a
-                                    href="#"
-                                    className="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
-                                >
-                                    Log in
-                                </a>
-                            </div>
+
                         </div>
                     </div>
                 </Dialog.Panel>

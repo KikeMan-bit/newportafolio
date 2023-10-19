@@ -11,7 +11,7 @@ export const Footer = () => {
                     </a>
                 </div>
                 <ul className="self-center  space-y-4 text-center sm:flex sm:space-y-0 sm:justify-around sm:space-x-4 lg:flex-1 lg:justify-start">
-                    <li>Terminos y  Condiciones</li>
+                    <li>Todos lo derecho reservado</li>
                 </ul>
                 <div className="flex flex-col justify-center pt-6 lg:pt-0">
                     <div className="flex justify-center space-x-4">

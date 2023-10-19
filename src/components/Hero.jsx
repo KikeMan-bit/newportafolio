@@ -2,7 +2,7 @@ import React from 'react'
 
 export const Hero = () => {
   return (
-    <div className='pt-32'>
+    <div id='hero' className='pt-32'>
       <div className="relative  lg:px-8">
 
         <div

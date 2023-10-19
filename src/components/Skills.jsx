@@ -3,8 +3,8 @@ import { Card } from './Skill/Card'
 
 export const Skills = () => {
     return (
-        <div>
-            <div className='grid grid-cols-2 gap-8 m-8'>
+        <div id='skill' >
+            <div className='grid grid-cols-1 lg:grid-cols-2 gap-8 m-8'>
                 <div className='p-4' >
                     <h3 className='text-5xl font-bold text-gray-800'>
                         Mis Habilidades y Experiencias
@@ -35,7 +35,7 @@ export const Skills = () => {
                         <h2 className='flex items-center justify-center font-bold text-md mb-2'>Frontend</h2>
 
 
-                        <div className='grid grid-cols-5 gap-6 items-center justify-evenly border-2 py-6 rounded-2xl '>
+                        <div className='grid grid-cols-3 md:grid-cols-5 gap-6 items-center justify-evenly border-2 py-6 rounded-2xl '>
                             <Card title='HTML5' image='https://res.cloudinary.com/thewebmaster/image/upload/c_scale,f_auto,q_auto:best,w_516/images/html/html5.png' />
 
                             <Card title='CSS3' image='https://diziglobalsolution.com/wp-content/uploads/2023/04/logo-css-3-1536.png' />
@@ -57,7 +57,7 @@ export const Skills = () => {
 
                     <div>
                         <h2 className='flex items-center justify-center font-bold text-md my-2'>Backend</h2>
-                        <div className='grid grid-cols-4 gap-6 items-center justify-evenly border-2 py-6 rounded-2xl '>
+                        <div className='grid grid-cols-3 md:grid-cols-5 gap-6 items-center justify-evenly border-2 py-6 rounded-2xl '>
                             <Card title='MySQL' image='https://styles.redditmedia.com/t5_2qm6k/styles/communityIcon_dhjr6guc03x51.png' />
 
                             <Card title='PHP' image='https://upload.wikimedia.org/wikipedia/commons/thumb/2/27/PHP-logo.svg/800px-PHP-logo.svg.png' />
@@ -67,14 +67,11 @@ export const Skills = () => {
                     </div>
 
                     <div>
-                    </div>
-
-                    <div>
                         <div>
                             <h2 className='flex items-center justify-center font-bold text-md my-2'>Extra</h2>
                         </div>
 
-                        <div className='grid grid-cols-5 gap-6 items-center justify-evenly border-2 py-6  mb-8 rounded-2xl '>
+                        <div className='grid grid-cols-3 md:grid-cols-5 gap-6 items-center justify-evenly border-2 py-6  mb-8 rounded-2xl '>
 
                             <Card title='Git' image='https://victorroblesweb.es/wp-content/uploads/2018/04/git.png' />
 
@@ -87,7 +84,7 @@ export const Skills = () => {
 
                             <Card title='Photoshop' image='data:image/png;base64,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' />
 
-                            <Card title='API REST FULL' image='https://media.licdn.com/dms/image/D4E12AQHUpQpcSsjnUw/article-cover_image-shrink_600_2000/0/1667956348172?e=2147483647&v=beta&t=VBPnkpfgha0y5fuNEdjOmG6vSwXOarA-M5XeSR6d1Wk' />
+                            <Card title='API' image='https://media.licdn.com/dms/image/D4E12AQHUpQpcSsjnUw/article-cover_image-shrink_600_2000/0/1667956348172?e=2147483647&v=beta&t=VBPnkpfgha0y5fuNEdjOmG6vSwXOarA-M5XeSR6d1Wk' />
 
                             <Card title='Hostinger' image='data:image/png;base64,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' />
 
@@ -98,9 +95,9 @@ export const Skills = () => {
 
                             <Card title='XAMPP' image='https://upload.wikimedia.org/wikipedia/en/thumb/7/78/XAMPP_logo.svg/1200px-XAMPP_logo.svg.png' />
 
-                            <Card title='Figma' image='https://assets.asana.biz/transform/ba9b63a3-f255-4088-b5fe-14ab4628f50b/logo-app-figma' />
+                            {/* <Card title='Figma' image='https://assets.asana.biz/transform/ba9b63a3-f255-4088-b5fe-14ab4628f50b/logo-app-figma' /> */}
 
-                            <Card title='Docker' image='https://www.docker.com/wp-content/uploads/2023/05/symbol_blue-docker-logo.png' />
+                            {/* <Card title='Docker' image='https://www.docker.com/wp-content/uploads/2023/05/symbol_blue-docker-logo.png' /> */}
 
                             <Card title='Vite' image='https://vitejs.dev/logo-with-shadow.png' />
 
