@@ -1,14 +1,12 @@
 import React from 'react'
+import Logo from '../assets/svg/logocc.svg'
 
 export const Footer = () => {
     return (
         <footer className="bg-gray-100 text-gray-900 mt-8">
             <div className="container flex flex-col p-4 mx-auto md:p-8 lg:flex-row divide-gray-600">
                 <div className="flex lg:flex-1">
-                    <a href="#" >
-                        <span className='font-bold text-lg text-gray-800' >CarlosCruz</span>
-
-                    </a>
+                    <img src={Logo} className='h-10' alt="" />
                 </div>
                 <ul className="self-center  space-y-4 text-center sm:flex sm:space-y-0 sm:justify-around sm:space-x-4 lg:flex-1 lg:justify-start">
                     <li>Todos lo derecho reservado</li>
