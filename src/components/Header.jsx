@@ -102,16 +102,16 @@ export const Header = () => {
                         <span href="#" className="text-sm font-bold leading-6 text-gray-900">
                             Mis Redes:
                         </span>
-                        <a className='text-lg'  target='__blank' href="https://www.instagram.com/kikem4n/">
+                        <a className='text-lg' target='__blank' href="https://www.instagram.com/kikem4n/">
                             <FaInstagram />
                         </a>
                         {/* <a target='__blank' href="https://github.com/KikeMan-bit">
                             <FaGithub />
                         </a> */}
-                        <a className='text-lg'  target='__blank' href="https://www.facebook.com/kik3man/">
+                        <a className='text-lg' target='__blank' href="https://www.facebook.com/kik3man/">
                             <FaFacebookF />
                         </a>
-                        <a className='text-lg'  target='__blank' href="https://www.linkedin.com/in/carlos-enrique-cruz-mendez-289654283">
+                        <a className='text-lg' target='__blank' href="https://www.linkedin.com/in/carlos-enrique-cruz-mendez-289654283">
                             < FaLinkedin />
                         </a>
                     </div>
@@ -140,7 +140,7 @@ export const Header = () => {
                     </div>
                     <div className="mt-6 flow-root">
                         <div className="-my-6 divide-y divide-gray-500/10">
-                            <div className=" space-y-2 py-6">
+                            <div className=" space-y-2 py-6 ">
 
                                 <Link onClick={() => setMobileMenuOpen(false)} to="hero"
                                     spy={true}
@@ -177,7 +177,25 @@ export const Header = () => {
                             </div>
 
                         </div>
+                        <div className='flex items-center mt-48 justify-center space-x-4 text-yellow-950'>
+                            <span href="#" className="text-lg  font-bold leading-6 text-gray-900">
+                                Mis Redes:
+                            </span>
+                            <a className='text-4xl' target='__blank' href="https://www.instagram.com/kikem4n/">
+                                <FaInstagram />
+                            </a>
+                            {/* <a target='__blank' href="https://github.com/KikeMan-bit">
+                            <FaGithub />
+                        </a> */}
+                            <a className='text-4xl' target='__blank' href="https://www.facebook.com/kik3man/">
+                                <FaFacebookF />
+                            </a>
+                            <a className='text-4xl' target='__blank' href="https://www.linkedin.com/in/carlos-enrique-cruz-mendez-289654283">
+                                < FaLinkedin />
+                            </a>
+                        </div>
                     </div>
+
                 </Dialog.Panel>
             </Dialog>
         </header>
