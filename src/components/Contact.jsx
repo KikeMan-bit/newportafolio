@@ -24,21 +24,20 @@ export const Contact = () => {
 
         if (captcha.current.getValue()) {
             console.log('el usuario no es un robot')
+            console.log('enviamos el formulario')
+            emailjs.sendForm('service_w4988fd', 'template_enjtbib', form.current, 'dUmxzHvKPR4l0Ih8T')
+                .then((result) => {
+                    console.log(result.text);
+                    getMessage(result)
+                    form.current.reset()
+                }, (error) => {
+                    console.log(error.text);
+                });
             cambiarCaptchaValido(true)
         } else {
             console.log('acepta el captcha')
             cambiarCaptchaValido(false)
         }
-
-        console.log('enviamos el formulario')
-        emailjs.sendForm('service_w4988fd', 'template_enjtbib', form.current, 'dUmxzHvKPR4l0Ih8T')
-            .then((result) => {
-                console.log(result.text);
-                getMessage(result)
-                form.current.reset()
-            }, (error) => {
-                console.log(error.text);
-            });
     };
 
 
@@ -61,7 +60,7 @@ export const Contact = () => {
                     <input id="email" type="email" name="user_email" className="w-full p-3 rounded-lg bg-[#fffcf2] border-2 border-gray-300 " />
                 </div>
                 <div>
-                    <label  className="text-sm">Mensaje</label>
+                    <label className="text-sm">Mensaje</label>
                     <textarea id="message" rows="3" name="message" className="w-full p-3 rounded-lg bg-[#fffcf2] border-2 border-gray-300 "></textarea>
                 </div>
                 <div className='flex  flex-col justify-center items-center' >
@@ -76,12 +75,12 @@ export const Contact = () => {
                         </span>
                     }
                 </div>
-                { message === false &&
-                <div className='flex items-center justify-center' >
-                    <span className='text-green-500 font-semibold' >
-                        Se envio el formulario
-                    </span>
-                </div>
+                {message === false &&
+                    <div className='flex items-center justify-center' >
+                        <span className='text-green-500 font-semibold' >
+                            Se envio el formulario
+                        </span>
+                    </div>
                 }
                 <input className="cursor-pointer  w-full p-3 text-sm font-bold tracki uppercase rounded bg-[#43291f] hover:bg-[#5e483f] text-gray-50" type="submit" value="Enviar" />
             </form>

@@ -12,7 +12,7 @@ import {
     SquaresPlusIcon,
     XMarkIcon,
 } from '@heroicons/react/24/outline'
-import { FaInstagram, FaFacebookF, FaGithub } from "react-icons/fa";
+import { FaInstagram, FaFacebookF, FaGithub, FaLinkedin } from "react-icons/fa";
 import { ChevronDownIcon, PhoneIcon, PlayCircleIcon } from '@heroicons/react/20/solid'
 
 const products = [
@@ -102,16 +102,18 @@ export const Header = () => {
                         <span href="#" className="text-sm font-bold leading-6 text-gray-900">
                             Mis Redes:
                         </span>
-                        <a target='__blank' href="https://www.instagram.com/kikem4n/">
+                        <a className='text-lg'  target='__blank' href="https://www.instagram.com/kikem4n/">
                             <FaInstagram />
                         </a>
                         {/* <a target='__blank' href="https://github.com/KikeMan-bit">
                             <FaGithub />
                         </a> */}
-                        <a target='__blank' href="https://www.facebook.com/kik3man/">
+                        <a className='text-lg'  target='__blank' href="https://www.facebook.com/kik3man/">
                             <FaFacebookF />
                         </a>
-
+                        <a className='text-lg'  target='__blank' href="https://www.linkedin.com/in/carlos-enrique-cruz-mendez-289654283">
+                            < FaLinkedin />
+                        </a>
                     </div>
                 </div>
             </nav>
@@ -143,33 +145,33 @@ export const Header = () => {
                                 <Link onClick={() => setMobileMenuOpen(false)} to="hero"
                                     spy={true}
                                     smooth={true}
-                                    offset={-20}  className="flex justify-center items-center  w-full -mx-3 rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50 ">
+                                    offset={-20} className="flex justify-center items-center  w-full -mx-3 rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50 ">
                                     Inicio
                                 </Link>
                                 <Link onClick={() => setMobileMenuOpen(false)} to="about"
                                     spy={true}
                                     smooth={true}
-                                    offset={-20}  className="flex justify-center items-center  w-full -mx-3 rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50 ">
+                                    offset={-20} className="flex justify-center items-center  w-full -mx-3 rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50 ">
                                     Acerca
                                 </Link>
                                 <Link onClick={() => setMobileMenuOpen(false)} to="skill"
                                     spy={true}
                                     smooth={true}
-                                    offset={-20}  className="flex justify-center items-center  w-full -mx-3 rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50 ">
+                                    offset={-20} className="flex justify-center items-center  w-full -mx-3 rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50 ">
                                     Habilidades
                                 </Link>
 
                                 <Link onClick={() => setMobileMenuOpen(false)} to="project"
                                     spy={true}
                                     smooth={true}
-                                    offset={-20}  className="flex justify-center items-center  w-full -mx-3 rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50 ">
+                                    offset={-20} className="flex justify-center items-center  w-full -mx-3 rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50 ">
                                     Proyecto
                                 </Link>
-                            
+
                                 <Link onClick={() => setMobileMenuOpen(false)} to="contacts"
                                     spy={true}
                                     smooth={true}
-                                    offset={-20}  className="flex justify-center items-center  w-full -mx-3 rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50 ">
+                                    offset={-20} className="flex justify-center items-center  w-full -mx-3 rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50 ">
                                     Contacto
                                 </Link>
                             </div>
