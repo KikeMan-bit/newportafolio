@@ -1,41 +1,14 @@
 import React from 'react'
-import { Fragment, useState } from 'react'
+import { useState } from 'react'
 import { Link } from 'react-scroll'
 import Logo from '../assets/svg/logocc.svg'
-import { Dialog, Disclosure, Popover, Transition } from '@headlessui/react'
+import { Dialog, Popover } from '@headlessui/react'
 import {
-    ArrowPathIcon,
     Bars3Icon,
-    ChartPieIcon,
-    CursorArrowRaysIcon,
-    FingerPrintIcon,
-    SquaresPlusIcon,
     XMarkIcon,
 } from '@heroicons/react/24/outline'
 import { FaInstagram, FaFacebookF, FaGithub, FaLinkedin } from "react-icons/fa";
-import { ChevronDownIcon, PhoneIcon, PlayCircleIcon } from '@heroicons/react/20/solid'
 
-const products = [
-    { name: 'Analytics', description: 'Get a better understanding of your traffic', href: '#', icon: ChartPieIcon },
-    { name: 'Engagement', description: 'Speak directly to your customers', href: '#', icon: CursorArrowRaysIcon },
-    { name: 'Security', description: 'Your customers’ data will be safe and secure', href: '#', icon: FingerPrintIcon },
-    { name: 'Integrations', description: 'Connect with third-party tools', href: '#', icon: SquaresPlusIcon },
-    { name: 'Automations', description: 'Build strategic funnels that will convert', href: '#', icon: ArrowPathIcon },
-]
-const callsToAction = [
-    { name: 'Watch demo', href: '#', icon: PlayCircleIcon },
-    { name: 'Contact sales', href: '#', icon: PhoneIcon },
-]
-
-function classNames(...classes) {
-    return classes.filter(Boolean).join(' ')
-}
-
-// export const Header = () => {
-//   return (
-//     <div>Header</div>
-//   )
-// }
 
 export const Header = () => {
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
@@ -96,6 +69,9 @@ export const Header = () => {
                         offset={-20} className="cursor-pointer text-sm font-semibold leading-6 text-gray-600 hover:text-gray-500 ">
                         Contacto
                     </Link>
+                    <a className="cursor-pointer text-sm font-semibold leading-6 text-gray-600 hover:text-gray-500" target='__blank' href="https://blog.carloscruz.site/">
+                        Blog
+                    </a>
                 </Popover.Group>
                 <div className="hidden lg:flex lg:flex-1 lg:justify-end">
                     <div className='flex items-center justify-center space-x-4 text-yellow-950'>
@@ -174,6 +150,10 @@ export const Header = () => {
                                     offset={-20} className="flex justify-center items-center  w-full -mx-3 rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50 ">
                                     Contacto
                                 </Link>
+
+                                <a className="flex justify-center items-center  w-full -mx-3 rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50 " target='__blank' href="https://blog.carloscruz.site/">
+                                    Blog
+                                </a>
                             </div>
 
                         </div>
