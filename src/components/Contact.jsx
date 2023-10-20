@@ -5,6 +5,10 @@ import ReCAPTCHA from "react-google-recaptcha";
 export const Contact = () => {
     const form = useRef();
 
+    const [name, setName] = useState("");
+    const [email, setEmail] = useState("");
+    const [messages, setMessages] = useState("");
+
     const [captchaValido, cambiarCaptchaValido] = useState(null)
     const [message, getMessage] = useState()
 
@@ -22,22 +26,38 @@ export const Contact = () => {
     const sendEmail = (e) => {
         e.preventDefault();
 
-        if (captcha.current.getValue()) {
-            console.log('el usuario no es un robot')
-            console.log('enviamos el formulario')
+        // if (captcha.current.getValue()) {
+        //     console.log('el usuario no es un robot')
+        //     console.log('enviamos el formulario')
+        //     emailjs.sendForm('service_w4988fd', 'template_enjtbib', form.current, 'dUmxzHvKPR4l0Ih8T')
+        //         .then((result) => {
+        //             console.log(result.text);
+        //             getMessage(result)
+        //             form.current.reset()
+        //         }, (error) => {
+        //             console.log(error.text);
+        //         });
+        //     cambiarCaptchaValido(true)
+        // } else {
+        //     console.log('acepta el captcha')
+        //     cambiarCaptchaValido(false)
+        // }
+        if (name && email && message && captchaValido) {
+            console.log('Todos los campos están llenos, enviando el formulario');
+            // Coloca aquí el código para enviar el formulario
             emailjs.sendForm('service_w4988fd', 'template_enjtbib', form.current, 'dUmxzHvKPR4l0Ih8T')
-                .then((result) => {
-                    console.log(result.text);
-                    getMessage(result)
-                    form.current.reset()
-                }, (error) => {
-                    console.log(error.text);
-                });
-            cambiarCaptchaValido(true)
-        } else {
-            console.log('acepta el captcha')
-            cambiarCaptchaValido(false)
-        }
+              .then((result) => {
+                console.log(result.text);
+                getMessage(result);
+                form.current.reset();
+              }, (error) => {
+                console.log(error.text);
+              });
+            cambiarCaptchaValido(true);
+          } else {
+            console.log('Por favor, complete todos los campos y acepte el captcha');
+            // Puedes mostrar un mensaje de error al usuario aquí
+          }
     };
 
 
@@ -51,17 +71,21 @@ export const Contact = () => {
                 <img src="https://static.vecteezy.com/system/resources/previews/011/153/360/original/3d-web-developer-working-on-project-illustration-png.png" alt="" className="p-6 " />
             </div>
             <form ref={form} onSubmit={sendEmail} className="space-y-6">
+               
                 <div>
                     <label className="text-sm">Nombre Completo</label>
-                    <input id="name" type="text" placeholder="" name="user_name" className="w-full p-3 rounded-lg bg-[#fffcf2] border-2 border-gray-300 " />
+                    <input id="name" type="text" placeholder="" name="user_name" value={name}
+                        onChange={(e) => setName(e.target.value)} className="w-full p-3 rounded-lg bg-[#fffcf2] border-2 border-gray-300 " />
                 </div>
                 <div>
                     <label className="text-sm">Email</label>
-                    <input id="email" type="email" name="user_email" className="w-full p-3 rounded-lg bg-[#fffcf2] border-2 border-gray-300 " />
+                    <input id="email" type="email" name="user_email" value={email}
+                        onChange={(e) => setEmail(e.target.value)} className="w-full p-3 rounded-lg bg-[#fffcf2] border-2 border-gray-300 " />
                 </div>
                 <div>
                     <label className="text-sm">Mensaje</label>
-                    <textarea id="message" rows="3" name="message" className="w-full p-3 rounded-lg bg-[#fffcf2] border-2 border-gray-300 "></textarea>
+                    <textarea id="message" rows="3" name="message" value={messages}
+                        onChange={(e) => setMessages(e.target.value)} className="w-full p-3 rounded-lg bg-[#fffcf2] border-2 border-gray-300 "></textarea>
                 </div>
                 <div className='flex  flex-col justify-center items-center' >
                     <ReCAPTCHA
@@ -75,7 +99,7 @@ export const Contact = () => {
                         </span>
                     }
                 </div>
-                {message === false &&
+                {message === true &&
                     <div className='flex items-center justify-center' >
                         <span className='text-green-500 font-semibold' >
                             Se envio el formulario
